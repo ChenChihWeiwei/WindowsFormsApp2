@@ -179,10 +179,7 @@ namespace WindowsFormsApp2
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtNumber.Text = "0";
-            firstNumber = 0f;
-            secondNumber = 0f;
-            operators = -1;
+            
         }
 
 

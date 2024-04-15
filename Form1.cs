@@ -24,8 +24,15 @@ namespace WindowsFormsApp2
             txtNumber.Text = txtNumber.Text + _number;
         }
 
-        // 全域變數
-        float firstNumber, secondNumber; // firstNumber 儲存第一個數字，secondNumber 儲存第二個數字
+        private void Select_Operator(int _operator)
+        {
+            firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
+            txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
+            operators = _operator; //選擇「加」號
+        }
+
+            // 全域變數
+            float firstNumber, secondNumber; // firstNumber 儲存第一個數字，secondNumber 儲存第二個數字
         int operators = -1; // 記錄選擇哪一種運算符號？0:加、1:減、2:乘、3:除、-1:重新設定
 
         private void btnZero_Click(object sender, EventArgs e)
@@ -120,30 +127,22 @@ namespace WindowsFormsApp2
 
             private void btnAdd_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
-            txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
-            operators = 0; //選擇「加」號
+                Select_Operator(0);
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToSingle(txtNumber.Text);
-            txtNumber.Text = "0";
-            operators = 1; //選擇「減」號
+                Select_Operator(1);
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToSingle(txtNumber.Text);
-            txtNumber.Text = "0";
-            operators = 2; //選擇「乘」號
+                Select_Operator(2);
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToSingle(txtNumber.Text);
-            txtNumber.Text = "0";
-            operators = 3; //選擇「除」號
+                Select_Operator(3);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -154,6 +153,25 @@ namespace WindowsFormsApp2
             operators = -1;
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            int n = txtNumber.Text.Length;
+            txtNumber.Text = txtNumber.Text.Substring(0, n-1);
+            if (n == 1)
+            {
+                txtNumber.Text = "0";
+            }
+        }
+
+        private void btnPercent_Click(object sender, EventArgs e)
+        {
+            //string.Format("{0:P2}", finalResults);
+
+            firstNumber = Convert.ToSingle(txtNumber.Text);
+            float finalResults = 0f; 
+            finalResults = firstNumber / 100f;
+            txtNumber.Text = string.Format("{0:0.##########}", finalResults);
+        }
 
         private void txtNumber_TextChanged(object sender, EventArgs e)
         {

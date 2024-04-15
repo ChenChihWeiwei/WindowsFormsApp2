@@ -47,6 +47,8 @@ namespace WindowsFormsApp2
             this.btnEqual = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtNumber = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnPercent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSeven
@@ -245,11 +247,35 @@ namespace WindowsFormsApp2
             this.txtNumber.TabIndex = 17;
             this.txtNumber.TextChanged += new System.EventHandler(this.txtNumber_TextChanged);
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(44, 208);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(120, 59);
+            this.btnBack.TabIndex = 18;
+            this.btnBack.Text = "<<";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnPercent
+            // 
+            this.btnPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPercent.Location = new System.Drawing.Point(44, 290);
+            this.btnPercent.Name = "btnPercent";
+            this.btnPercent.Size = new System.Drawing.Size(120, 59);
+            this.btnPercent.TabIndex = 19;
+            this.btnPercent.Text = "%";
+            this.btnPercent.UseVisualStyleBackColor = true;
+            this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPercent);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEqual);
@@ -295,6 +321,8 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Button btnEqual;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtNumber;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnPercent;
     }
 }
 
